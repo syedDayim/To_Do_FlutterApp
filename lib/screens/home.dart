@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:to_do/constants/colors.dart';
+import 'package:to_do/screens/to_do_items.dart';
 
 class Home extends StatelessWidget {
   const Home({super.key});
@@ -16,7 +17,14 @@ class Home extends StatelessWidget {
           child: Column(
             children: [
               searchBox(),
-              Expanded(
+              mainlist(),
+            ],
+          ),
+        ));
+  }
+
+  Widget mainlist() {
+    return Expanded(
                 child: ListView(
                   children: [
                     Container(
@@ -28,13 +36,20 @@ class Home extends StatelessWidget {
                         ),
                       ),
                     ),
+                    ToDoItems(),
+                    ToDoItems(),
+                    ToDoItems(),
+                    ToDoItems(),
+                    ToDoItems(),
+                    ToDoItems(),
+                    ToDoItems(),
+                    Text("2"),
+                    Text("3"),
+                    Text("4"),
                     
                   ],
                 ),
-              )
-            ],
-          ),
-        ));
+              );
   }
 
   Widget searchBox() {
