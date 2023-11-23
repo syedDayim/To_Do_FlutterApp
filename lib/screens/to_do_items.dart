@@ -1,11 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:to_do/constants/colors.dart';
+import 'package:to_do/model/todo.dart';
 
 class ToDoItems extends StatelessWidget {
-  const ToDoItems({super.key});
+  ToDoItems({super.key});
+
+  List<ToDo> tasks = ToDo.toDoList();
+
 
   @override
   Widget build(BuildContext context) {
+  print(tasks);
     return Container(
       margin: EdgeInsets.fromLTRB(0, 0, 0, 20.0),
       child: ListTile(
@@ -22,7 +27,7 @@ class ToDoItems extends StatelessWidget {
           color: tdBlue,
         ),
         title: const Text(
-          "Develop a Website",
+          "Develop a Websiteeeeeeee",
           style: TextStyle(
             fontSize: 16,
             color: tdBlack,

@@ -42,10 +42,7 @@ class Home extends StatelessWidget {
                         ),
                       ),
                     ),
-                    
-                    
-                    
-                    
+
                   ],
                 ),
               );
@@ -84,9 +81,9 @@ class Home extends StatelessWidget {
             Container(
                 height: 40,
                 width: 40,
+                color: tdBlack,
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(20.0),
-                  child: Image.asset("avatar.jpeg"),
                 ))
           ],
         ));
