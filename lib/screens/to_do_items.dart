@@ -3,14 +3,16 @@ import 'package:to_do/constants/colors.dart';
 import 'package:to_do/model/todo.dart';
 
 class ToDoItems extends StatelessWidget {
-  ToDoItems({super.key});
+  final ToDo todo;
+  ToDoItems({super.key, required this.todo});
 
-  List<ToDo> tasks = ToDo.toDoList();
+  
+  
 
 
   @override
   Widget build(BuildContext context) {
-  print(tasks);
+ 
     return Container(
       margin: EdgeInsets.fromLTRB(0, 0, 0, 20.0),
       child: ListTile(
@@ -22,16 +24,13 @@ class ToDoItems extends StatelessWidget {
         ),
         contentPadding: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
         tileColor: Colors.white, 
-        leading: const Icon(
-          Icons.check_box,
-          color: tdBlue,
-        ),
-        title: const Text(
-          "Develop a Websiteeeeeeee",
+        leading: todo.isDone! ? Icon(Icons.check_box, color: tdBlue) : Icon(Icons.check_box_outline_blank , color: tdBlue),
+        title: Text(
+          "${todo.todoText}",
           style: TextStyle(
             fontSize: 16,
             color: tdBlack,
-            decoration: TextDecoration.lineThrough,
+            decoration: todo.isDone! ? TextDecoration.lineThrough: null,
           ),
           
         ),

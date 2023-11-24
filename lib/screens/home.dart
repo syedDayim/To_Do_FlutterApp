@@ -1,11 +1,12 @@
 // ignore_for_file: sized_box_for_whitespace
 import 'package:flutter/material.dart';
 import 'package:to_do/constants/colors.dart';
+import 'package:to_do/model/todo.dart';
+import 'package:to_do/screens/to_do_items.dart';
 
 
 class Home extends StatelessWidget {
-  const Home({super.key});
-
+   Home({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -29,6 +30,7 @@ class Home extends StatelessWidget {
 
   Widget mainlist() {
 
+  List<ToDo> tasks = ToDo.toDoList();
     
     return Expanded(
                 child: ListView(
@@ -42,7 +44,8 @@ class Home extends StatelessWidget {
                         ),
                       ),
                     ),
-
+                    for(ToDo task in tasks)
+                        ToDoItems(todo: task),
                   ],
                 ),
               );
